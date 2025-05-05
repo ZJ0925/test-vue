@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TestVue
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -62,3 +63,6 @@ npm run test:e2e -- --debug
 ```sh
 npm run lint
 ```
+=======
+# testVue
+>>>>>>> 575778d4b3ed3d244948285c82df90f1b35f77d8
