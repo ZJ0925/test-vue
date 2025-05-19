@@ -2,38 +2,42 @@
 <template>
     <div class="preson">  <!--組件結構-->
         <h2>姓名:{{ name }}</h2>
-        <h2>年齡:{{age}}</h2>
-        <h2>屬性:{{type}}</h2>
-        <button @click="changname">修改姓名</button>
-        <button @click="changage">修改年齡</button>
-
-        
+        <h2>年齡:{{ age }}</h2>
+        <button @click="changName">修改姓名</button>
+        <button @click="changAge">修改年齡</button>
         <button @click="showMore">查看更多</button>
     </div>
 </template>
 
 <!--腳本結構-->
 <script>
+    import { ref } from 'vue';
     export default{
         name:'Preson',  //組件名
-        data(){
-            return{
-                name:'ZJ',
-                age:26,
-                type:'fire',
-                more:"帥哥"
+        setup(){
+            //數據
+            let name = ref('小明');  //定義變數
+            let age = ref(18);
+            let type = ref('人類');
+
+            // 方法
+            function changName(){  
+                name.value = '小紅';
             }
-        },
-        methods:{
-            showMore(){
-                alert(this.more)
-            },
-            changname(){
-                this.name = 'YJ'
-            },
-            changage(){
-                this.age = '18'
+
+            function changAge(){
+                age.value = 20;
             }
+
+            function changType(){
+                // 這裡可以添加修改type的邏輯
+            }
+
+            function showMore(){  //查看更多
+                alert('姓名：' + name.value + ' 年齡：' + age.value + ' 類型：' + type.value);
+            }
+
+            return {age, name, changName, changAge, showMore, type};  //返回變數
         }
     }
 </script>
