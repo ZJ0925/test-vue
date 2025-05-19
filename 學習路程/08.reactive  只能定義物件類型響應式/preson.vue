@@ -14,7 +14,7 @@
 
     function changeColor(){
         car.color = '紅色';
-        car.price = '130';
+        car.price = "130";//reactive不在乎資料類型
     }
 </script>
 
